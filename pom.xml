@@ -116,7 +116,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.16</version>
+                            <version>${lombokVersion}</version>
                         </path>
                         <path>
                             <groupId>org.mapstruct</groupId>
