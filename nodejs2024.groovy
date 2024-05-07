@@ -16,5 +16,21 @@ job('Aplicacion Node.js DSL') {
         shell("npm install")
     }
     publishers {
+        // Add conditional post-build actions.
+        flexiblePublish {
+            // Adds a conditional action.
+            conditionalAction {
+                // Specifies the condition to evaluate before executing the build steps.
+                condition {
+                    // Runs a shell script for checking the condition.
+                    shell('echo hello0000!')
+                    // Runs the build steps if the current build status is within the configured range.
+                    status('FAILURE', 'SUCCESS')
+                }
+                steps {
+                    shell('echo hello1111!')
+                }
+            }
+        }
     }
 }
